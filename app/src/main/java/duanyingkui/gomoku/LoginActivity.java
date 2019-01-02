@@ -44,6 +44,10 @@ public class LoginActivity extends AppCompatActivity {
         btn_send.setOnClickListener(mListener);                      //采用OnClickListener方法设置不同按钮按下之后的监听事件
         btn_login.setOnClickListener(mListener);
 
+        login_sp = getSharedPreferences("userInfo", 0);
+        String name=login_sp.getString("USER_NAME", "");
+        String pwd =login_sp.getString("PASSWORD", "");
+
         if (mUserDataManager == null) {
             mUserDataManager = new UserDataManager(this);
             mUserDataManager.openDataBase();                              //建立本地数据库

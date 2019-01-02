@@ -52,9 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
                 mUserDataManager.openDataBase();
                 long flag = mUserDataManager.insertUserData(mUser); //新建用户信息
                 if (flag == -1) {
-                    Toast.makeText(this, "注册成功",Toast.LENGTH_SHORT).show();
-                }else{
                     Toast.makeText(this, "注册失败",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(this, "注册成功",Toast.LENGTH_SHORT).show();
                     Intent intent_Register_to_Login = new Intent(RegisterActivity.this,LoginActivity.class) ;    //切换User Activity至Login Activity
                     startActivity(intent_Register_to_Login);
                     finish();
